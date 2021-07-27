@@ -17,7 +17,7 @@ int main()
     );
 
     sf::CircleShape shape( 100.f );
-
+    // shape.setPosition( sf::Vector2f(WINDOW_SIDE/2 - 100, WINDOW_SIDE/2 - 100 ) );
     shape.setFillColor( sf::Color::Green );
 
     while ( window.isOpen() )
