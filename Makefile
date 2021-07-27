@@ -15,18 +15,32 @@ INCPATH = src/include/
 # source path
 SRCPATH = src/source/
 # object file path
-OBJPATH = src/obj/
+OBJPATH = bin/release/
 
 
 ###### FILES USED 
 
 # object files
-OBJ = $(SRCPATH)main.cpp
+OBJ = $(OBJPATH)main.o
 # header file dependencies
 DEPS = 
 
-$(RTARGET) : $(OBJ) 
-	$(COMPILER) $< -o $@
+
+# COMMANDS 
+
+
+default : run
+
 
 run : $(RTARGET)
 	$^
+
+$(RTARGET) : $(OBJ)
+	$(COMPILER) $^ -o $@
+
+clean : 
+	rm $(OBJPATH)*.exe $(OBJPATH)*.o
+
+# impilcit rule: compile .cpp files but don't link
+$(OBJPATH)%.o : $(SRCPATH)%.cpp $(DEPS) 
+	g++ $< -c -o $@
