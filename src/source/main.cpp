@@ -4,16 +4,20 @@
 // core c/c++
 #include <iostream> 
 
+#define WINDOW_SIDE 800
+
+
 int main()
 {
     sf::RenderWindow window
     ( 
-        sf::VideoMode( 800, 800 ), 
+        sf::VideoMode( WINDOW_SIDE, WINDOW_SIDE ), 
         "SFML works!", 
         sf::Style::Close 
     );
 
     sf::CircleShape shape( 100.f );
+
     shape.setFillColor( sf::Color::Green );
 
     while ( window.isOpen() )
@@ -21,12 +25,13 @@ int main()
         sf::Event event;
         while ( window.pollEvent( event ) )
         {
+
             switch( event.type ){
                 case sf::Event::Closed:
                     window.close();
                 break; 
             }
-                
+
         }
 
         window.clear();
