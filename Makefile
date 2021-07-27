@@ -36,7 +36,7 @@ run : $(RTARGET)
 	$^
 
 $(RTARGET) : $(OBJ)
-	$(COMPILER) $^ -o $@
+	$(COMPILER) $^ -o $@ $(CFLAGS) $(LIBS)
 
 clean : 
 	rm $(OBJPATH)*.exe $(OBJPATH)*.o
