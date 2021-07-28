@@ -24,13 +24,19 @@ void utl::DistancePoint::Draw( sf::RenderWindow& window ){
 }
 
 
- utl::DistancePoints::DistancePoints(
+utl::DistancePoints::DistancePoints(
     const sf::Vector2f& position, 
     const sf::Vector2f& pointSize, 
     const sf::Font& font, 
     const std::string& textContent,
     const std::string& fileContent
-){
+){  
     std::cout<< "DISTANCEPOINTSSSSSSSSSSSSSSSSSS\n";
     std::cout<< fileContent << '\n';
+}
+
+
+void utl::DistancePoints::Draw( sf::RenderWindow& window ){
+    for(utl::DistancePoint dp : list )
+        dp.Draw( window );
 }

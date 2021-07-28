@@ -52,7 +52,7 @@ int main(const int argc, const char *argv[] )
     sf::Vector2f( WINDOW_SIDE/2.f, WINDOW_SIDE/2.f ),
     sf::Vector2f(50.f,50.f),
     lato,
-    "ev3",
+    "EV3",
     fileContent
     );
 

@@ -40,6 +40,9 @@ namespace utl{
                 const std::string& fileContent
             );
         public:
+             /// draw DistancePoint objects
+            void Draw( sf::RenderWindow& window );
+        public:
             std::vector<DistancePoint> list;
         
     };
