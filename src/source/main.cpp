@@ -27,6 +27,14 @@ int main(const int argc, const char *argv[] )
   
     // std::cout<< "fileContent: \n "<< fileContent << "###\n"; 
 
+    // lato font
+    sf::Font lato;
+    if( lato.loadFromFile("src/res/Lato-Black.ttf") )
+        std::cout<< "font loaded\n";
+    else
+        std::cout<< "font issue, make sure it is in res directory\n";
+
+
     utl::DistancePoint dp;
 
 
