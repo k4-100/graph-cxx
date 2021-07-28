@@ -21,9 +21,10 @@ OBJPATH = bin/release/
 ###### FILES USED 
 
 # object files
-OBJ = $(OBJPATH)main.o $(OBJPATH)FileReader.o
+OBJ = $(OBJPATH)main.o $(OBJPATH)FileReader.o  $(OBJPATH)DistancePoint.o
 # header file dependencies
-DEPS = $(INCPATH)FileReader.hpp
+DEPS = $(INCPATH)FileReader.hpp $(INCPATH)DistancePoint.hpp
+
 
 
 # COMMANDS 

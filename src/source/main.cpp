@@ -4,7 +4,9 @@
 // core c/c++
 #include <iostream> 
 
+// user-defined headers
 #include "../include/FileReader.hpp"
+#include "../include/DistancePoint.hpp"
 
 // user-defined macros 
 #define WINDOW_SIDE 800
@@ -24,6 +26,9 @@ int main(const int argc, const char *argv[] )
     const std::string fileContent =  utl::readFromFile( filePath );
   
     // std::cout<< "fileContent: \n "<< fileContent << "###\n"; 
+
+    utl::DistancePoint dp;
+
 
     sf::RectangleShape shape(sf::Vector2f(100.f,100.f) );
     shape.setOrigin(shape.getSize().x/2.f, shape.getSize().y/2.f );
