@@ -10,7 +10,7 @@
 #define WINDOW_SIDE 800
 
 
-int main()
+int main(const int argc, const char *argv[] )
 {
     sf::RenderWindow window
     ( 
@@ -19,7 +19,10 @@ int main()
         sf::Style::Close 
     );
 
-    std::cout<< utl::readFromFile() << '\n';
+    // file path
+    const std::string filePath = argv[1] != nullptr ? argv[1] : "sample.txt";
+
+    std::cout<< utl::readFromFile( filePath ) << '\n';
 
 
     sf::CircleShape shape( 100.f );

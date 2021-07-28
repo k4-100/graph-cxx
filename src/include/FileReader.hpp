@@ -10,7 +10,7 @@ namespace utl{
 
 /// @param path path to file 
 /// @return string containing whole file
-std::string readFromFile( const std::string& path = "sample.txt" );
+std::string readFromFile( const std::string& path );
 
 } //! namespace utl
 
