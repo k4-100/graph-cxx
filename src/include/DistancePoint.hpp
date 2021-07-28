@@ -14,10 +14,10 @@ namespace utl{
         // CONSTRUCTOR
         public:
             DistancePoint(
-                // const sf::Vector2f& position, 
-                // const sf::Vector2f& pointSize, 
-                // const sf::Font& font, 
-                // const std::string& textContent 
+                const sf::Vector2f& position, 
+                const sf::Vector2f& pointSize, 
+                const sf::Font& font, 
+                const std::string& textContent 
             );
 
         // VARIABLES

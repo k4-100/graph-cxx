@@ -29,19 +29,19 @@ int main(const int argc, const char *argv[] )
 
     // lato font
     sf::Font lato;
-
-    if( lato.loadFromFile( "../../Lato-Black.ttf" ) )
+    
+    if( lato.loadFromFile( "Lato-Black.ttf"  ) )
         std::cout<< "font loaded (RELEASE) \n";
     else{
-        if( lato.loadFromFile( "Lato-Black.ttf"  ) )
+        if( lato.loadFromFile(  "../../Lato-Black.ttf"  ) )
             std::cout<< "font loaded (TESTING) \n";
         else
             std::cout<< "font issue, make sure it is in res directory\n";
     }
 
-    sf::Text txt("font test", lato, 20);
+    // sf::Text txt("font test", lato, 20);
 
-    utl::DistancePoint dp;
+    // utl::DistancePoint dp;
 
 
     sf::RectangleShape shape(sf::Vector2f(100.f,100.f) );
@@ -65,8 +65,8 @@ int main(const int argc, const char *argv[] )
         }
 
         window.clear();
-        window.draw( shape );
-        window.draw( txt );
+        // window.draw( shape );
+        // window.draw( txt );
         window.display();
     }
 
