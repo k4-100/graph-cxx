@@ -20,7 +20,7 @@ int main(const int argc, const char *argv[] )
     );
 
     // file path
-    const std::string filePath = argv[1] != nullptr ? argv[1] : "sample.txt";
+    const std::string filePath = argv[1] != nullptr ? argv[1] : "sample.rtf";
 
     std::cout<< utl::readFromFile( filePath ) << '\n';
 
