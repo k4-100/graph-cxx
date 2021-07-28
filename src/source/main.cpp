@@ -41,7 +41,12 @@ int main(const int argc, const char *argv[] )
 
     // sf::Text txt("font test", lato, 20);
 
-    // utl::DistancePoint dp;
+    utl::DistancePoint dp(
+        sf::Vector2f( WINDOW_SIDE/2.f, WINDOW_SIDE/2.f ),
+        sf::Vector2f(50.f,50.f),
+        lato,
+        "lato font"
+    );
 
 
     sf::RectangleShape shape(sf::Vector2f(100.f,100.f) );
@@ -67,6 +72,7 @@ int main(const int argc, const char *argv[] )
         window.clear();
         // window.draw( shape );
         // window.draw( txt );
+        dp.Draw(window);
         window.display();
     }
 

@@ -19,7 +19,10 @@ namespace utl{
                 const sf::Font& font, 
                 const std::string& textContent 
             );
-
+        // FUNCTIONS
+        public:
+            /// draw rectangle and text
+            void Draw( sf::RenderWindow& window );
         // VARIABLES
         public:
             sf::RectangleShape point;
