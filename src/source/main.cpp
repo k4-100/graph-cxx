@@ -39,6 +39,7 @@ int main(const int argc, const char *argv[] )
             std::cout<< "font issue, make sure it is in res directory\n";
     }
 
+    sf::Text txt("font test", lato, 20);
 
     utl::DistancePoint dp;
 
@@ -65,6 +66,7 @@ int main(const int argc, const char *argv[] )
 
         window.clear();
         window.draw( shape );
+        window.draw( txt );
         window.display();
     }
 
