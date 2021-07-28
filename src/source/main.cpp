@@ -4,6 +4,9 @@
 // core c/c++
 #include <iostream> 
 
+#include "../include/FileReader.hpp"
+
+// user-defined macros 
 #define WINDOW_SIDE 800
 
 
@@ -15,6 +18,9 @@ int main()
         "SFML works!", 
         sf::Style::Close 
     );
+
+    std::cout<< utl::readFromFile() << '\n';
+
 
     sf::CircleShape shape( 100.f );
     // shape.setPosition( sf::Vector2f(WINDOW_SIDE/2 - 100, WINDOW_SIDE/2 - 100 ) );
