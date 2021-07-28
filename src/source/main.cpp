@@ -29,10 +29,15 @@ int main(const int argc, const char *argv[] )
 
     // lato font
     sf::Font lato;
-    if( lato.loadFromFile("src/res/Lato-Black.ttf") )
-        std::cout<< "font loaded\n";
-    else
-        std::cout<< "font issue, make sure it is in res directory\n";
+
+    if( lato.loadFromFile( "../../Lato-Black.ttf" ) )
+        std::cout<< "font loaded (RELEASE) \n";
+    else{
+        if( lato.loadFromFile( "Lato-Black.ttf"  ) )
+            std::cout<< "font loaded (TESTING) \n";
+        else
+            std::cout<< "font issue, make sure it is in res directory\n";
+    }
 
 
     utl::DistancePoint dp;
