@@ -25,9 +25,11 @@ int main(const int argc, const char *argv[] )
   
     // std::cout<< "fileContent: \n "<< fileContent << "###\n"; 
 
-    sf::CircleShape shape( 100.f );
-    // shape.setPosition( sf::Vector2f(WINDOW_SIDE/2 - 100, WINDOW_SIDE/2 - 100 ) );
-    shape.setFillColor( sf::Color::Green );
+    sf::RectangleShape shape(sf::Vector2f(100.f,100.f) );
+    shape.setOrigin(shape.getSize().x/2.f, shape.getSize().y/2.f );
+    shape.setPosition( WINDOW_SIDE/2.f, WINDOW_SIDE/2.f );
+
+
 
     while ( window.isOpen() )
     {
