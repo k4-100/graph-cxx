@@ -19,11 +19,11 @@ int main(const int argc, const char *argv[] )
         sf::Style::Close 
     );
 
-    // file path
     const std::string filePath = argv[1] != nullptr ? argv[1] : "sample.rtf";
 
-    std::cout<< utl::readFromFile( filePath ) << '\n';
-
+    const std::string fileContent =  utl::readFromFile( filePath );
+  
+    std::cout<< "fileContent: \n "<< fileContent << "###\n"; 
 
     sf::CircleShape shape( 100.f );
     // shape.setPosition( sf::Vector2f(WINDOW_SIDE/2 - 100, WINDOW_SIDE/2 - 100 ) );
