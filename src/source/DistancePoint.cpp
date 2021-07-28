@@ -15,11 +15,22 @@ utl::DistancePoint::DistancePoint(
     text.setPosition(position);
     text.setOrigin(text.getLocalBounds().width/2.f, pointSize.y );
 
-    std::cout<< "DISTANCEPOINT IS HERE MAN\n";
 }
 
 
 void utl::DistancePoint::Draw( sf::RenderWindow& window ){
     window.draw(point);
     window.draw(text);
+}
+
+
+ utl::DistancePoints::DistancePoints(
+    const sf::Vector2f& position, 
+    const sf::Vector2f& pointSize, 
+    const sf::Font& font, 
+    const std::string& textContent,
+    const std::string& fileContent
+){
+    std::cout<< "DISTANCEPOINTSSSSSSSSSSSSSSSSSS\n";
+    std::cout<< fileContent << '\n';
 }

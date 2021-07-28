@@ -48,6 +48,15 @@ int main(const int argc, const char *argv[] )
         "lato font"
     );
 
+    utl::DistancePoints dPoints(
+    sf::Vector2f( WINDOW_SIDE/2.f, WINDOW_SIDE/2.f ),
+    sf::Vector2f(50.f,50.f),
+    lato,
+    "ev3",
+    fileContent
+    );
+
+
 
     sf::RectangleShape shape(sf::Vector2f(100.f,100.f) );
     shape.setOrigin(shape.getSize().x/2.f, shape.getSize().y/2.f );
@@ -72,7 +81,7 @@ int main(const int argc, const char *argv[] )
         window.clear();
         // window.draw( shape );
         // window.draw( txt );
-        dp.Draw(window);
+        dp.Draw( window );
         window.display();
     }
 

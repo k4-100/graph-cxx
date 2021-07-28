@@ -6,7 +6,7 @@
 
 // core c/c++
 #include <iostream>
-
+#include <vector>
 
 namespace utl{
 
@@ -27,6 +27,21 @@ namespace utl{
         public:
             sf::RectangleShape point;
             sf::Text text;
+    };
+
+
+    class DistancePoints{
+        public:
+            DistancePoints(
+                const sf::Vector2f& position, 
+                const sf::Vector2f& pointSize, 
+                const sf::Font& font, 
+                const std::string& textContent,
+                const std::string& fileContent
+            );
+        public:
+            std::vector<DistancePoint> list;
+        
     };
 
 } //! namespace utl
