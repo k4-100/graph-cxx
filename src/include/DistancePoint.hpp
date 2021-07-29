@@ -8,6 +8,17 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <math.h>
+
+/*PI number with somehow low float point precision*/
+#define PI 3.141592654
+
+/*pseudo reverses the value; float number precision*/ 
+#define reverse(X) (1.0f/X)
+
+/*calculates divider for PI*/
+#define calculatePIdivider(X) ( float( (360.0/X) / 2.0 ) ) 
+
 
 namespace utl{
 

@@ -16,9 +16,9 @@ int main(const int argc, const char *argv[] )
 {
     sf::RenderWindow window
     ( 
-        sf::VideoMode( WINDOW_SIDE, WINDOW_SIDE ), 
+        sf::VideoMode( 1000, 1000 ), 
         "SFML works!", 
-        sf::Style::Close 
+        sf::Style::Default 
     );
 
     const std::string filePath = argv[1] != nullptr ? argv[1] : "sample.rtf";
