@@ -22,7 +22,7 @@ int main(const int argc, const char *argv[] )
     );
 
     window.setView(
-        sf::View( sf::Vector2f(0.f,0.f), sf::Vector2f(WINDOW_SIDE,WINDOW_SIDE)  )
+        sf::View( sf::Vector2f(0.f,0.f), sf::Vector2f(WINDOW_SIDE,WINDOW_SIDE) * 2.f  )
     );
 
     const std::string filePath = argv[1] != nullptr ? argv[1] : "sample.rtf";
@@ -54,7 +54,7 @@ int main(const int argc, const char *argv[] )
 
     utl::DistancePoints dPoints(
     sf::Vector2f( 0.f, 0.f ),
-    sf::Vector2f(30.f,30.f),
+    sf::Vector2f(35.f,35.f),
     lato,
     "EV3",
     fileContent

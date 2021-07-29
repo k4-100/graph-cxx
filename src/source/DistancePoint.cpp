@@ -60,14 +60,31 @@ utl::DistancePoints::DistancePoints(
 
     std::vector<utl::DistancePoints> fileValues;
     
-    for(uint16_t i=0; i<storage.size(); i++)
-        list.push_back( utl::DistancePoint( position + sf::Vector2f(0.f,100.f + storage[i]), pointSize, font, std::to_string( i ) + "\n" + std::to_string( round( storage[i] * 10 )  )  ) );
+    for(uint16_t i=0; i<storage.size(); i++){
+        std::stringstream val;
+        val << std::fixed << std::setprecision(1) << storage[i];
+
+        list.push_back( utl::DistancePoint( position + sf::Vector2f(0.f,300.f + storage[i] * 5.f ), pointSize, font, std::to_string(i+1) + ": "  + val.str()  ) );
+    }
+        
+
+    const float averageDegree = 360.f / storage.size();
 
     for(uint16_t i=1; i<list.size(); i++){
-        double angle =PI / calculatePIdivider( 90.f * (i) ) ;
+        // angle in TRIGONOMETRY, not in degrees
+        double angle = 0;
+        float degrees = 0;
+
+        if( i > 1 ){
+            degrees = averageDegree * (i-1);
+            angle = PI / calculatePIdivider( degrees ) ;
+        }
+        
+
+
         sf::Vector2f dp = list[i].point.getPosition() ;
         
-        std::cout<< angle << '\n';
+        std::cout<< degrees << '\n';
         double Xrot = dp.x * cos(angle) - dp.y * sin(angle);
         double Yrot = dp.y * cos(angle) + dp.x * sin(angle);
         std::cout<<"Xrot: "<< Xrot << '\n';

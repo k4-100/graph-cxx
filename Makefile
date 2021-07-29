@@ -1,7 +1,7 @@
 # compiler name
 COMPILER=g++
 # necessary compiler flags
-CFLAGS= -lpthread
+CFLAGS= -lpthread -Wall
 # libraries used
 LIBS= -lsfml-graphics -lsfml-window -lsfml-system
 # release target
