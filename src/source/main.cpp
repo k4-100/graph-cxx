@@ -21,6 +21,10 @@ int main(const int argc, const char *argv[] )
         sf::Style::Default 
     );
 
+    window.setView(
+        sf::View( sf::Vector2f(0.f,0.f), sf::Vector2f(WINDOW_SIDE,WINDOW_SIDE)  )
+    );
+
     const std::string filePath = argv[1] != nullptr ? argv[1] : "sample.rtf";
 
     const std::string fileContent =  utl::readFromFile( filePath );
@@ -41,15 +45,15 @@ int main(const int argc, const char *argv[] )
 
     // sf::Text txt("font test", lato, 20);
 
-    utl::DistancePoint dp(
-        sf::Vector2f( WINDOW_SIDE/2.f, WINDOW_SIDE/2.f ),
-        sf::Vector2f(50.f,50.f),
-        lato,
-        "lato font"
-    );
+    // utl::DistancePoint dp(
+    //     sf::Vector2f( WINDOW_SIDE/2.f, WINDOW_SIDE/2.f ),
+    //     sf::Vector2f(50.f,50.f),
+    //     lato,
+    //     "lato font"
+    // );
 
     utl::DistancePoints dPoints(
-    sf::Vector2f( WINDOW_SIDE/2.f, WINDOW_SIDE/2.f ),
+    sf::Vector2f( 0.f, 0.f ),
     sf::Vector2f(30.f,30.f),
     lato,
     "EV3",
@@ -60,7 +64,7 @@ int main(const int argc, const char *argv[] )
 
     sf::RectangleShape shape(sf::Vector2f(100.f,100.f) );
     shape.setOrigin(shape.getSize().x/2.f, shape.getSize().y/2.f );
-    shape.setPosition( WINDOW_SIDE/2.f, WINDOW_SIDE/2.f );
+    shape.setPosition(0.f,0.f );
 
 
 
@@ -74,6 +78,15 @@ int main(const int argc, const char *argv[] )
                 case sf::Event::Closed:
                     window.close();
                 break; 
+                case sf::Event::MouseButtonPressed:
+                // sf::Mouse msPos;
+                // std::cout<< "x: "<< msPos.getPosition(window).x << '\n';
+                // std::cout<< "y: "<< msPos.getPosition(window).y << '\n';
+
+                sf::Vector2f mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+                std::cout<< "x: "<< mouse.x << '\n';
+                std::cout<< "y: "<< mouse.y << '\n';
+                break;
             }
 
         }

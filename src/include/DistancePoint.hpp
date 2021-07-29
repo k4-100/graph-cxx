@@ -35,6 +35,7 @@ namespace utl{
         public:
             /// draw rectangle and text
             void Draw( sf::RenderWindow& window );
+            void SetPosition(  const sf::Vector2f& position);
         // VARIABLES
         public:
             sf::RectangleShape point;
@@ -54,9 +55,10 @@ namespace utl{
         public:
              /// draw DistancePoint objects
             void Draw( sf::RenderWindow& window );
+            
         public:
             std::vector<DistancePoint> list;
-        
+
     };
 
 } //! namespace utl

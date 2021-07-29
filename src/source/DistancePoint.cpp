@@ -10,11 +10,9 @@ utl::DistancePoint::DistancePoint(
 
 {   
     point.setOrigin(pointSize/2.f);
-    point.setPosition(position);
     point.setFillColor(sf::Color::Green);
-    text.setPosition(position);
     text.setOrigin(text.getLocalBounds().width/2.f, pointSize.y );
-
+    SetPosition(position);
 }
 
 
@@ -23,6 +21,10 @@ void utl::DistancePoint::Draw( sf::RenderWindow& window ){
     window.draw(text);
 }
 
+void utl::DistancePoint::SetPosition(const sf::Vector2f& position){
+    point.setPosition(position);
+    text.setPosition(position);
+}
 
 utl::DistancePoints::DistancePoints(
     const sf::Vector2f& position, 
@@ -59,17 +61,19 @@ utl::DistancePoints::DistancePoints(
     std::vector<utl::DistancePoints> fileValues;
     
     for(uint16_t i=0; i<storage.size(); i++)
-        list.push_back( utl::DistancePoint( position + sf::Vector2f(10.f * (1+i),0.f), pointSize, font, textContent ) );
+        list.push_back( utl::DistancePoint( position + sf::Vector2f(0.f,100.f + storage[i]), pointSize, font, std::to_string( i ) + "\n" + std::to_string( round( storage[i] * 10 )  )  ) );
 
     for(uint16_t i=1; i<list.size(); i++){
-        double angle = 20 * i ;
-        sf::Vector2f dp = list[i].point.getPosition();
+        double angle =PI / calculatePIdivider( 90.f * (i) ) ;
+        sf::Vector2f dp = list[i].point.getPosition() ;
         
         std::cout<< angle << '\n';
         double Xrot = dp.x * cos(angle) - dp.y * sin(angle);
         double Yrot = dp.y * cos(angle) + dp.x * sin(angle);
+        std::cout<<"Xrot: "<< Xrot << '\n';
+        std::cout<<"Yrot: "<< Yrot << '\n';
 
-        list[i].point.setPosition(sf::Vector2f( (float)Xrot,(float)Yrot ) );
+        list[i].SetPosition(sf::Vector2f( (float)Xrot,(float)Yrot )  );
     }
 
 }
