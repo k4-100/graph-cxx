@@ -55,7 +55,9 @@ utl::DistancePoints::DistancePoints(
 
     // central point
     list.push_back( utl::DistancePoint( position, pointSize, font, textContent ) );
-    
+    list[0].point.setFillColor(sf::Color::Red);
+
+
     std::string str = fileContent;
 
     std::vector<utl::DistancePoints> fileValues;
