@@ -50,7 +50,7 @@ int main(const int argc, const char *argv[] )
 
     utl::DistancePoints dPoints(
     sf::Vector2f( WINDOW_SIDE/2.f, WINDOW_SIDE/2.f ),
-    sf::Vector2f(50.f,50.f),
+    sf::Vector2f(30.f,30.f),
     lato,
     "EV3",
     fileContent
