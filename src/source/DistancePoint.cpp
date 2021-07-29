@@ -34,11 +34,27 @@ utl::DistancePoints::DistancePoints(
     // std::cout<< "DISTANCEPOINTSSSSSSSSSSSSSSSSSS\n";
     // std::cout<< fileContent << '\n';
     
+    /// @return std::vector containing str split into floats
+    auto split = [](std::string str){
+        std::vector<float> valVec;
+
+        while( str.find('\n') != std::string::npos )
+        {
+            std::string buffer = str.substr( 0, str.find('\n') );
+            valVec.push_back( std::stof(buffer) );
+            str.replace( str.find(buffer), buffer.size()+1, "" );
+        }
+
+        return valVec;
+    };
+
+    auto storage = split( fileContent );
+
+
     // central point
     list.push_back( utl::DistancePoint( position, pointSize, font, textContent ) );
 
     std::string str = fileContent;
-    // std::cout<< "endline: " << fileContent.find('\n') << '\n';
 
     std::vector<utl::DistancePoints> fileValues;
     
