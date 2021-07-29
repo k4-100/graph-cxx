@@ -31,8 +31,18 @@ utl::DistancePoints::DistancePoints(
     const std::string& textContent,
     const std::string& fileContent
 ){  
-    std::cout<< "DISTANCEPOINTSSSSSSSSSSSSSSSSSS\n";
-    std::cout<< fileContent << '\n';
+    // std::cout<< "DISTANCEPOINTSSSSSSSSSSSSSSSSSS\n";
+    // std::cout<< fileContent << '\n';
+    
+    // central point
+    list.push_back( utl::DistancePoint( position, pointSize, font, textContent ) );
+
+    std::string str = fileContent;
+    // std::cout<< "endline: " << fileContent.find('\n') << '\n';
+
+    std::vector<utl::DistancePoints> fileValues;
+    
+
 }
 
 

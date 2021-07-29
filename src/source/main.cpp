@@ -81,7 +81,7 @@ int main(const int argc, const char *argv[] )
         window.clear();
         // window.draw( shape );
         // window.draw( txt );
-        dp.Draw( window );
+        dPoints.Draw( window );
         window.display();
     }
 
