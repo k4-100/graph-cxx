@@ -53,11 +53,13 @@ utl::DistancePoints::DistancePoints(
 
     // central point
     list.push_back( utl::DistancePoint( position, pointSize, font, textContent ) );
-
+    
     std::string str = fileContent;
 
     std::vector<utl::DistancePoints> fileValues;
     
+    for(uint16_t i=0; i< storage.size(); i++)
+        list.push_back( utl::DistancePoint( position + sf::Vector2f(100.f * (1+i),0.f), pointSize, font, textContent ) );
 
 }
 
